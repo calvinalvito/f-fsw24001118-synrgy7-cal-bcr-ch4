@@ -1,0 +1,63 @@
+class Car {
+  static list = [];
+
+  static init(cars) {
+    this.list = cars.map((i) => new this(i));
+  }
+
+  constructor({
+    id,
+    plate,
+    manufacture,
+    model,
+    image,
+    rentPerDay,
+    capacity,
+    description,
+    transmission,
+    available,
+    type,
+    year,
+    options,
+    specs,
+    availableAt,
+  }) {
+    this.id = id;
+    this.plate = plate;
+    this.manufacture = manufacture;
+    this.model = model;
+    this.image = image;
+    this.rentPerDay = rentPerDay;
+    this.capacity = capacity;
+    this.description = description;
+    this.transmission = transmission;
+    this.available = available;
+    this.type = type;
+    this.year = year;
+    this.options = options;
+    this.specs = specs;
+    this.availableAt = availableAt;
+  }
+
+  render() {
+    return `
+    <div>
+    <p>id: <b>${this.id}</b></p>
+    <p>plate: <b>${this.plate}</b></p>
+    <p>manufacture: <b>${this.manufacture}</b></p>
+    <p>model: <b>${this.model}</b></p>
+    <p>available at: <b>${this.availableAt}</b></p>
+    <img src="${this.image}" alt="${this.manufacture}" width="64px">
+    <p>rent per day: <b>${this.rentPerDay}</b></p>
+    <p>capacity: <b>${this.capacity}</b></p>
+    <p>description: <b>${this.description}</b></p>
+    <p>transmission: <b>${this.transmission}</b></p>
+    <p>available: <b>${this.available}</b></p>
+    <p>type: <b>${this.type}</b></p>
+    <p>year: <b>${this.year}</b></p>
+    <p>options: <b>${this.options}</b></p>
+    <p>specs: <b>${this.specs}</b></p>
+</div>
+    `;
+  }
+}
